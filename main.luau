@@ -56,7 +56,7 @@ local getTarget = function(origin: Vector3)
     local cPart, cDistance = nil, getgenv().fov or 300;
 
     for _, char: Model in next, ow:GetChildren() do
-        if char:FindFirstChildOfClass("ForceField") or (char:FindFirstChild("Humanoid") and char.Humanoid.Health <= 0) then continue; end;
+        if char:FindFirstChildOfClass("ForceField") or (char:FindFirstChild("Zombie") and char.Zombie.Health <= 0) then continue; end;
 
         local tPart: BasePart = char:FindFirstChild("Head") or char.PrimaryPart or char:FindFirstChild("HumanoidRootPart");
         if not tPart then continue; end;
